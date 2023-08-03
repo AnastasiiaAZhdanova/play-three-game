@@ -1,0 +1,200 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+a {
+    text-decoration: none;
+}
+
+body {
+    font-family: 'Montserrat', sans-serif;
+}
+
+.center {
+    padding-left: calc(50% - 600px);
+    padding-right: calc(50% - 600px);
+}
+
+.heading {
+    min-height: 1024px;
+    background-image: url(./img3/main.jpg);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+
+    &__head {
+        padding-top: 217px;
+        font-family: "Montserrat";
+        font-style: normal;
+        font-weight: 700;
+        font-size: 64px;
+        line-height: 78px;
+        color: #FFFFFF;
+        max-width: 789px;
+        padding-bottom: 32px;
+    }
+    &__middle {
+        font-style: normal;
+        font-weight: 700;
+        font-size: 48px;
+        line-height: 59px;
+        color: #FFFFFF;
+        padding-bottom: 32px;
+
+    }
+
+    &__text {
+        font-family: 'Montserrat';
+        font-style: normal;
+        font-weight: 300;
+        font-size: 18px;
+        line-height: 32px;
+        color: #FFFFFF;
+        max-width: 481px;
+        padding-bottom: 57px;
+    }
+    &__down {
+        font-family: 'Montserrat';
+        font-style: normal;
+        font-weight: 300;
+        font-size: 18px;
+        line-height: 32px;
+        color: #FFFFFF;
+        max-width: 1200px;
+        padding-bottom: 57px;
+    }
+    &__button {
+        width: 234px;
+        height: 49px;
+        background: #9C0332;
+        border-radius: 30px;
+        box-sizing: border-box;
+        color: #FFFFFF;
+        padding-left: 74px;
+        padding-right: 74px;
+        font-family: 'Montserrat';
+        font-style: normal;
+        font-weight: 400;
+        font-size: 18px;
+        line-height: 22px;
+
+        &:hover {
+            background: #EB443F;
+        }
+    }
+}
+
+.down {
+    height: 556px;
+    display: grid;
+    gap: 32px;
+    grid-template-columns: repeat(12, 1fr);
+    background-image: url(./img3/down.jpg);
+    align-content: center;
+
+    &__game {
+        height: 300px;
+        grid-column: span 4;
+        font-family: 'Montserrat';
+        font-style: normal;
+        font-weight: 600;
+        font-size: 24px;
+        line-height: 32px;
+        color: #FFFFFF;
+        background: linear-gradient(180deg, rgba(39, 1, 15, 0) 0%, #001944 100%), url(0023.jpg);
+        border-radius: 16px;
+        display: flex;
+        align-items: flex-end;
+        padding-left: 32px;
+        padding-bottom: 32px;
+            &:hover {
+            border: 3px solid #44D2FF;
+        }
+    }
+
+    &__game1 {
+        background-image: url(./img3/game1.jpg);
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+    }
+
+    &__game2 {
+        background-image: url(./img3/game2.jpg);
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+    }
+
+    &__game3 {
+        background-image: url(./img3/game3.jpg);
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+    }
+
+}
+
+.firstGame {
+    min-height: 800px;
+    background-image: url(./img3/firstGame.jpg);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    flex-wrap: nowrap;
+    align-items: center;
+    
+}
+.secondGame {
+    min-height: 800px;
+    background-image: url(./img3/firstGame.jpg);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: space-around;
+    flex-wrap: nowrap;
+    align-items: center;
+    
+}
+.thirdGame {
+    min-height: 800px;
+    background-image: url(./img3/thirdGame.jpg);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: center;
+    align-items: center;
+    
+}
+.firstGame__left{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+.footer{
+    min-height: 80px;
+    background-image: url(./img3/firstGame.jpg);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 15px;
+    color: #FFFFFF;
+    display: flex;
+    justify-content: center;
+}
+
+
+@import 'mobile';

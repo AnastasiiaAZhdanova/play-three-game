@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HW-1</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <section>
+        <div class="heading center">
+            <h1 class="heading__head">Добро пожаловать на мой сайт !</h1>
+            <p class="heading__text">Вам предстоит пройти несколько увлекательных игр. Если готов нажимай <b>поехали</b>
+                и <b>приступай</b></p>
+            <form class="heading__button_mob" action="#">
+                <button onclick="#" class="heading__button" type="submit">Поехали!</button>
+            </form>
+        </div>
+
+    </section>
+    <section>
+        <div class="down center">
+            <a class="down__game down__game1" href="#game1">Игра 1</a>
+            <a class="down__game down__game2" href="#game2">Игра 2</a>
+            <a class="down__game down__game3" href="#game3">Игра 3</a>
+        </div>
+    </section>
+    <section>
+        <div id="game1" class="firstGame center">
+            <div class="firstGame__left">
+                <h2 class="heading__middle">Времена года!</h2>
+                <p class="heading__text">Нажмите кнопку играть, введите номер месяца (от 1 до 12) и вы узнаете к
+                    какому времени года он относится</p>
+                <form class="heading__button_mob" action="#">
+                    <button onclick="firstGame ()" class="heading__button" type="submit">Играть!</button>
+                </form>
+            </div>
+            <div class="firstGame__right">
+                <picture>
+                    <source media="(max-width: 767px)" srcset="./img3/pictureMob.svg">
+                    <source media="(min-width: 768x)" srcset="./img3/picture.svg">
+                    <img src="./img3/picture.svg" alt="picture">
+                </picture>
+
+            </div>
+        </div>
+    </section>
+    <section>
+        <div id="game2" class="center secondGame">
+            <div class="firstGame__left">
+                <h2 class="heading__middle">Запомни слова</h2>
+                <p class="heading__text">При нажатии на кнопку играть, вы увидите несколько слов, которые вам необходимо
+                    запомнить.</p>
+                <form class="heading__button_mob" action="#">
+                    <button onclick="secondGame ()" class="heading__button" type="submit">Играть!</button>
+                </form>
+            </div>
+            <div class="firstGame__right">
+                <picture>
+                    <source media="(max-width: 767px)" srcset="./img3/game2Mob.svg">
+                    <source media="(min-width: 768x)" srcset="./img3/game2.svg">
+                    <img src="./img3/game2.svg" alt="game2">
+                </picture>
+
+            </div>
+        </div>
+    </section>
+    <section>
+        <div id="game3" class="thirdGame center">
+            <div class="firstGame__left">
+                <h2 class="heading__middle">Игра в загадки</h2>
+                <p class="heading__down">Компьютер загадывает загадку, вам необходимо ее угадать, если вы дадите не
+                    правильный ответ, то компьютер даст вам подсказку. У вас будет три попытки и две подсказки.</p>
+                <form class="heading__button_mob" action="#">
+                    <button onclick="thirdGame ()" class="heading__button" type="submit">Играть!</button>
+                </form>
+            </div>
+        </div>
+    </section>
+    <footer class="footer">
+        Все права защищены
+    </footer>
+    <script>
+
+        let someBtn = document.getElementById('all');
+        someBtn.onclick = function () {
+            myFunction(5);
+        }
+
+        function firstGame() {
+            let n = Number(prompt('Введите номер месяца от 1 до 12'));
+            if (n === 12 || n === 1 || n === 2) {
+                alert('Зима');
+            } else if (n === 3 || n === 4 || n === 5) {
+                alert('Весна');
+            } else if (n === 6 || n === 7 || n === 8) {
+                alert('Лето');
+            } else if (n === 9 || n === 10 || n === 11) {
+                alert('Осень');
+            } else {
+                alert('Попробуй еще раз');
+            }
+        }
+        firstGame(1);
+
+        function secondGame() {
+
+            const arr = ['яблоко', 'груша', 'дыня', 'виноград', 'персик', 'апельсин', 'мандарин'];
+            const shuffledArr = arr.sort((a, b) => 0.5 - Math.random());
+            alert(shuffledArr);
+            let ask1 = String(prompt('Какой был первый фрукт?'));
+            let ask2 = String(prompt('Какой был последний фрукт?'));
+            if (ask1 === shuffledArr[0] && ask2 === shuffledArr[shuffledArr.length - 1]) {
+                alert('Поздравляем, Вы угадали!!!');
+            } else if (ask1 === shuffledArr[0] || ask2 === shuffledArr[shuffledArr.length - 1]) {
+                alert('Вы были близки к победе!');
+            } else {
+                alert('Вы ответили неверно');
+            }
+        }
+        secondGame('груша');
+
+        function thirdGame() {
+            const game = {
+                question: 'Сырым не едят, вареным выбрасывают',
+                answer: '',
+                answerVar: ['лавровый лист', 'Лавровый лист', 'лаврушка', 'Лаврушка', 'лавр', 'Лавр'],
+                help: ['Подсказка первая: Это Пряность', 'Подсказка вторая: Кладут в воду для пельменей и в суп для аромата'],
+                askQ() {
+                    this.answer = prompt(this.question);
+                },
+                helper() {
+                    alert(this.help[0]);
+                    this.help.shift();
+                    this.play();
+                },
+                play() {
+                    this.askQ();
+                    if (this.answerVar.includes(this.answer)) {
+                        alert('Угадал!');
+                    } else {
+                        if (this.help.length > 0) {
+                            this.helper();
+                        } else {
+                            alert('Упс! Не угадал');
+                        }
+                    }
+                }
+            }
+            game.play();
+        }
+
+    </script>
+
+    <script src="./index.js"></script>
+</body>
+
+</html>
